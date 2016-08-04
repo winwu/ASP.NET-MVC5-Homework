@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Accounting.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,9 +9,25 @@ namespace Accounting.Controllers
 {
     public class HomeController : Controller
     {
+        
         public ActionResult Index()
         {
             return View();
+        }
+
+        [ChildActionOnly]
+        public ActionResult ForAccountChildAction()
+        {
+
+            var Model = new AccountItemView
+            {
+                Id = 1,
+                Type = "支出",
+                Datetime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss ffff"),
+                Price = 300
+            };
+          
+            return View(Model);
         }
 
         public ActionResult About()
@@ -27,4 +44,6 @@ namespace Accounting.Controllers
             return View();
         }
     }
+
+  
 }
