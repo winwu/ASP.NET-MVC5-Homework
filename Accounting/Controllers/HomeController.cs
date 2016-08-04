@@ -18,14 +18,31 @@ namespace Accounting.Controllers
         [ChildActionOnly]
         public ActionResult ForAccountChildAction()
         {
-            ViewData.Model = new AccountItemView
+            IList<AccountItemView> lists = new List<AccountItemView>();
+            lists.Add(new AccountItemView()
             {
                 Id = 1,
                 Type = "支出",
                 Datetime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss ffff"),
                 Price = 300
-            };
-          
+            });
+            lists.Add(new AccountItemView()
+            {
+                Id = 2,
+                Type = "支出",
+                Datetime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss ffff"),
+                Price = 1300
+            });
+            lists.Add(new AccountItemView()
+            {
+                Id = 3,
+                Type = "支出",
+                Datetime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss ffff"),
+                Price = 300
+            });
+            
+            ViewData["lists"] = lists;
+      
             return View();
         }
 

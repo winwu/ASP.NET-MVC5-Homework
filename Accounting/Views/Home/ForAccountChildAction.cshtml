@@ -10,11 +10,23 @@
         <th>日期</th>
         <th>金額</th>
     </tr>
-    <tr>
-        <td>@Model.Id</td>
-        <td>@Model.Type</td>
-        <td>@Model.Datetime</td>
-        <td>@Model.Price</td>
-
-    </tr>
+    
+    @foreach (var item in ViewData["lists"] as IList<Accounting.Models.AccountItemView>)
+    {
+        <tr>
+            <td>
+                @item.Id
+            </td>
+            <td>
+                @item.Type
+            </td>
+            <td>
+                @item.Datetime
+            </td>
+            <td>
+                @item.Price
+            </td>
+         </tr>
+     }
+   
 </table>
