@@ -18,8 +18,7 @@ namespace Accounting.Controllers
         [ChildActionOnly]
         public ActionResult ForAccountChildAction()
         {
-
-            var Model = new AccountItemView
+            ViewData.Model = new AccountItemView
             {
                 Id = 1,
                 Type = "支出",
@@ -27,7 +26,7 @@ namespace Accounting.Controllers
                 Price = 300
             };
           
-            return View(Model);
+            return View();
         }
 
         public ActionResult About()
