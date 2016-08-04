@@ -2,31 +2,76 @@
     Layout = "~/Views/Shared/_AccountLayout.cshtml";
     ViewBag.Title = "我的記帳本";
 }
-
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+<style>
+    .body-content {
+        margin-top: 10px;
+    }
+</style>
+<div class="well">
+    <form class="form-horizontal">
+        <div class="form-group">
+            <label for="category" class="col-sm-2 control-label">類別</label>
+            <div class="col-sm-10">
+                <select id="category" class="form-control">
+                    <option value="" selected>請選擇</option>
+                    <option>支出</option>
+                    <option>收入</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="money" class="col-sm-2 control-label">金額</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="money" placeholder="金額">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="date" class="col-sm-2 control-label">日期</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="date" placeholder="日期">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="description" class="col-sm-2 control-label">備註</label>
+            <div class="col-sm-10">
+                <textarea class="form-control" id="description"></textarea>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-8 col-sm-4">
+                <button type="submit" class="btn btn-default">送出</button>
+            </div>
+        </div>
+    </form>
 </div>
 
 <div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    <div class="col-md-12">
+        <table class="table table-bordered table-hover">
+            <tr>
+                <th>#</th>
+                <th>類別</th>
+                <th>日期</th>
+                <th>金額</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>支出</td>
+                <td>2016-01-01</td>
+                <td>300</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>支出</td>
+                <td>2016-01-02</td>
+                <td>1,600</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>支出</td>
+                <td>2016-01-03</td>
+                <td>8,00</td>
+            </tr>
+        </table>
     </div>
 </div>
